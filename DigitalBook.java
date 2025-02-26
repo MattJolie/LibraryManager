@@ -20,9 +20,9 @@ public class DigitalBook extends Book {
 
     // print out information about the digital book
     @Override
-    public void printDetails() {
-        System.out.println("Book type: Digital");
-        System.out.println("File format: " + fileFormat);
-        System.out.println();
+    public void displayInfo() {
+        System.out.print("Book type: Digital, ");
+        System.out.print("Title: " + getTitle());
+        System.out.println(", File format: " + fileFormat);
     }
 }

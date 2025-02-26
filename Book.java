@@ -7,7 +7,7 @@
  * as well as methods to get a Book's ISBN and to print the details of a Book
  **************************************************/
 
-public class Book {
+abstract class Book{
     // attributes of a book
     private String title;
     private String author;
@@ -27,21 +27,22 @@ public class Book {
         return ISBN;
     }
 
-    // Allows a book to be borrowed if it is available
-    public boolean borrowBook(){
-        if (!isAvailable){
-            System.out.println("The book \"" + title + "\" is not available and cannot be borrowed.");
-            return false;
-        }
-        else {
-            isAvailable = false;
-            return true;
-        }
+    // Checking a book's availability
+    public boolean isAvailable(){
+        return isAvailable;
     }
 
-    // Return the book, making it available again
-    public void returnBook(){
-        isAvailable = true;
+    // setting availability for a book
+    public void setAvailable(boolean isAvailable){
+        this.isAvailable = isAvailable;
+    }
+
+    // displaying info, will be implemented by child classes
+    public abstract void displayInfo();
+
+    //getter method for title
+    public String getTitle(){
+        return title;
     }
 
     // Print out the title, author, ISBN, and availability of a book

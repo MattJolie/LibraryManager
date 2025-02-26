@@ -30,14 +30,16 @@ public class LibraryMember {
 
     // borrow a book
     public void borrowBook(Book book){
-        if(book.borrowBook()){
+        if(book.isAvailable()){
+            book.setAvailable(false);
             booksBorrowed++;
         }
+        else{System.out.println("This book is not available");}
     }
 
     // return a book
     public void returnBook(Book book){
-        book.returnBook();
+        book.setAvailable((true));
         booksBorrowed--;
     }
 

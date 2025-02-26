@@ -20,9 +20,9 @@ public class PhysicalBook extends Book {
 
     // method for displaying book type and weight
     @Override
-    public void printDetails(){
-        System.out.println("Book type: Physical");
-        System.out.println("Weight: " + weight);
-        System.out.println();
+    public void displayInfo(){
+        System.out.print("Book type: Physical, ");
+        System.out.print("Title: " + getTitle());
+        System.out.println(", Weight: " + weight + "kg");
     }
 }
